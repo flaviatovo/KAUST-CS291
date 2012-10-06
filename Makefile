@@ -1,3 +1,6 @@
+# Just in case putting all of the targets here
+.PHONY: src debug prof tests
+
 EXEC = afl
 # Getting all files finished by .cpp and put it on files variable
 FILES = $(wildcard *.cpp)
@@ -6,15 +9,31 @@ OBJS = $(patsubst %.cpp,%.o,$(FILES))
 
 CC = g++
 
+default: src
+
+src: $(EXEC)
+
+debug:
+	-@echo 'Calling debug'
+
+prof:
+	-@echo 'Calling profiling'
+
+tests:
+	-@echo 'Calling unit tests'
+
+run:
+	-@echo 'Running the code'
+
 all: $(EXEC)
 
-$(EXEC) : Makefile $(OBJS)
+$(EXEC): Makefile $(OBJS)
 	-@echo 'Generating executable'
 	-@$(CC) $(CFLAGS) -o $(EXEC) $(OBJS)
 
-.cpp.o :
+.cpp.o:
 	-@$(CC) $(CFLAGS) -c $<
 
-clean :
+clean:
 	-@echo 'Cleaning ...'
 	-@rm -f $(EXEC) $(OBJS) *~
