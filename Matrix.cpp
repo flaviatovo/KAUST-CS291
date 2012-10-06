@@ -37,9 +37,11 @@
 #include "Matrix.hpp"
 #include "Vector.hpp"
 #include "StringFunc.hpp"
+#include <cstdlib>
 #include <stdexcept>
 #include <iomanip>
 #include <cmath>
+#include <climits>
 
 using namespace std;
 using namespace PACC;

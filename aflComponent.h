@@ -19,7 +19,7 @@
 #ifndef _AFL_COMPONENT_H_
 #define _AFL_COMPONENT_H_  "aflComponent.h"
 
-#include <string>
+#include <string.h>
 #include <sstream>
 
 #include "aflConst.h"

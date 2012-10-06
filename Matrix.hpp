@@ -40,6 +40,7 @@
 #include "Assert.hpp"
 //#include "PACC/XML/Document.hpp"
 //#include "PACC/XML/Streamer.hpp"
+#include <cstdlib>
 #include <vector>
 #include <string>
 

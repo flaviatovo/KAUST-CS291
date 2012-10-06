@@ -42,6 +42,7 @@
 //#include "PACC/XML/Document.hpp"
 //#include "PACC/XML/Streamer.hpp"
 #include <cmath>
+#include <algorithm>
 
 namespace PACC {
 	

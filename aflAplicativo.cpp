@@ -19,7 +19,8 @@
 #include <cstdio>
 #include <fstream>
 #include <iostream>
-#include <string>
+#include <string.h>
+#include <stdlib.h>
 #include <vector>
 #include <time.h>
 #include <sstream>
