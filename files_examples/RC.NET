@@ -1,0 +1,9 @@
+2
+* The analysis goes wrong because of false memory
+
+.tran 20 20E-3 GEAR 1
+
+R0100 1 0 1
+C0102 1 2 1
+D0100 1 0 
+V0200 2 0 PULSE( 0 5 1 0 0 1 2 4 )

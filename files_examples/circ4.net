@@ -1,0 +1,12 @@
+3
+* Fourth circuit to test the program.
+* Circuit with only resistors and sources
+
+* .IMPRIMIR no1
+
+.tran 1e-2 1e-4 GEAR 50
+
+V1 1 0 SIN( 0 10 0.1e3 0 0 0 10)
+R1 1 2 1e3
+R2 2 3 1e3
+C1 3 0 1e-6

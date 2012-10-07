@@ -14,11 +14,25 @@ HOW TOs:
 	run 'make debug' on current directory
 - compile/run profiling
 	run 'make prof' on current directory
+	results are stored in exec/prof.txt
 - compile/run unit tests
 	run 'make tests' on current directory
 - clean
 	run 'make clean' on current directory
 - run code
 	run './exec/afl' or './exec/afl filename' or 'make run' on current directory
+	output files have the same names as input files but finish by '.dat'
+
+WHERE:
+- src
+	all source files
+- include
+	all headers files
+- exec
+	where executable and profiling will be stored
+- tests
+	all unit tests
+- files
+	examples of input files with their output
 
 
