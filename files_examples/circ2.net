@@ -4,8 +4,8 @@
 
 * .IMPRIMIR no1
 
-.tran 5e-4 1e-4 BE 50
+.tran 5e-3 1e-4 BE 50
 
-V1 1 0 PULSE( -5 5 0 0.1e-6 0.1e-6 1e-4 2e-4 10)
+V1 1 0 PULSE( -5 5 0 0.1e-6 0.1e-6 2e-4 4e-4 10)
 R1 1 2 1e3
 R2 2 0 1e3
