@@ -30,16 +30,16 @@ int main(int argc, char *argv[])
 		
 	std::vector<std::string> stringErro;
 	stringErro.push_back("#0 OK #");
-	stringErro.push_back("#1 Elemento nao valido #");
-	stringErro.push_back("#2 Parametro invalido #");
-	stringErro.push_back("#3 Circuito com muitos nos. Maximo = 100 nos #");
-	stringErro.push_back("#4 Arquivo invalido. Nao foi possivel abri-lo #");
-	stringErro.push_back("#5 O sistema nao convergiu. #");
-	stringErro.push_back("#6 Erro ao escrever o arquivo de saida #");
-	stringErro.push_back("#7 Pilha vazia #");
+	stringErro.push_back("#1 Invalid element #");
+	stringErro.push_back("#2 Invalid parameter #");
+	stringErro.push_back("#3 Too many nodes on circuit. Max = 100 nodes #");
+	stringErro.push_back("#4 Invalid file. It was not possible to open it #");
+	stringErro.push_back("#5 The system didn't converge. #");
+	stringErro.push_back("#6 Error writing output file #");
+	stringErro.push_back("#7 Empty stack #");
 	stringErro.push_back("#8 Overflow #");
-	stringErro.push_back("#9 Erro ao escrever o arquivo de saida #");
-	stringErro.push_back("#10 Circuito sem no de referencia #");
+	stringErro.push_back("#9 Error writing output file #");
+	stringErro.push_back("#10 Circuit without reference node #");
 
 	if (argc==2)
 	{
@@ -47,14 +47,14 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		std::cout << "Digite o nome do arquivo de Netlist:"<<std::endl;
+		std::cout << "Enter the netlist filename:"<<std::endl;
 		std::cin >> fileName;
 	}
 
 	Aplicativo aplicativo(fileName);
 	if(aplicativo.erro != OK)
 	{
-		std::cout<<"Erro "<< stringErro[aplicativo.erro]<<" ao executar o programa."<<std::endl;
+		std::cout<<"Error "<< stringErro[aplicativo.erro]<<" while running the program."<<std::endl;
 		exit (aplicativo.erro);
 	}
 

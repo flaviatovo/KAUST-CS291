@@ -784,7 +784,7 @@ unsigned Aplicativo::cad()
 	}
 
 	//Escrevendo o nome das variaveis na string que sera usada como cabecario do resultado
-	nomeDasVariaveis = std::string("#     Tempo(s)  ");
+	nomeDasVariaveis = std::string("#     Time(s)   ");
 	{
 	for (i = 1; i<=numeroDeNos; i++)
 	{
