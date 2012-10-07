@@ -35,4 +35,49 @@ WHERE:
 - files
 	examples of input files with their output
 
+WRITING NETLISTS (SPICE) (http://www.seas.upenn.edu/~jan/spice/spice.overview.html)
+   Component               Syntax                              Obs
+ Resistor               Rname N1 N2 Value
+ Capacitor              Cname N1 N2 Value <IC>           IC is initial condition, N1 + and N2 -
+ Inductor               Lname N1 N2 Value <IC>           IC is initial condition, N1 + and N2 -
+ Voltage source         Vname N1 N2 TYPE                 TYPE in Source Types
+ Current source         Iname N1 N2 TYPE                 TYPE in Source Types
+ Diode                  Dname N+ N- <Is <Vt>>
+ Bipolar transistor     Qname C B E Param1 Params        Param1 is NPN or PNP, Params is described below
+ Voltage amplifier      Ename N1 N2 NC1 NC2 Value        Voltage-Controlled Voltage Source
+ Transconductor         Gname N1 N2 NC1 NC2 Value        Voltage-Controlled Current source 
+ Transresistor          Hname N1 N2 NC1 NC2 Value        Current-Controlled Voltage Source
+ Current amplifier      Fname N1 N2 NC1 NC2 Value        Current-Controlled Current source
 
+Source Types               
+- Sinusoidal sources
+     Syntax: SIN(O A FREQ TD THETA PHASE)
+     Where:
+       O - offset
+       A - amplitude
+       FREQ - the frequency in herz.
+       TD - delay in seconds
+       THETA - damping factor per second
+       Phase - phase in degrees
+- Pulse sources
+     Syntax: PULSE(A1 A2 TD Tr Tf PW Period)
+     Where:
+       A1 - initial amplitude
+       A2 - peak amplitude
+       TD - initial delay time
+       Tr - rise time
+       Tf - fall time
+       pwf - pulse-wise
+       Period - period
+- DC sources
+     Syntax: DC(A)
+       A - amplitude
+
+Transistor Params (optional)
+ Syntax: <alpha <alphar <Isbe <Vtbe <Isbc <Vtbc>>>>>>
+       alpha - BJT efficiency
+       alphar - 
+       Isbe - Is of diode base-emissor
+       Vtbe - Vt of diode base-emissor
+       Isbc - Is of diode base-colector
+       Vtbc - Vt of diode base-colector

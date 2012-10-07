@@ -325,7 +325,7 @@ unsigned Aplicativo::montaMatrizes()
 
 			qtd_cmp ++;
 		}
-		else if (netlistVirtual[indice].tipo == F)//Transresistor
+		else if (netlistVirtual[indice].tipo == H)//Transresistor
 		{
 			//coloca mais uma linha e mais uma coluna em cada matrz
 			matrizMNA.resize(qtd_cmp+1,qtd_cmp+1);
@@ -350,7 +350,7 @@ unsigned Aplicativo::montaMatrizes()
 			
 			qtd_cmp ++;
 		}
-		else if (netlistVirtual[indice].tipo == H)//Amplificador de corrente
+		else if (netlistVirtual[indice].tipo == F)//Amplificador de corrente
 		{
 			//coloca mais uma linha e mais uma coluna em cada matrz
 			matrizMNA.resize(qtd_cmp+2,qtd_cmp+2);
