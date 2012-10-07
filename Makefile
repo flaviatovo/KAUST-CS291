@@ -1,22 +1,34 @@
-EXEC = ../exec/afl
-# Getting all files finished by .cpp and put it on files variable
-FILES = $(wildcard *.cpp)
-# Getting all files from files variable, replacing .cpp by .o and put it on objs variable
-OBJS = $(patsubst %.cpp,%.o,$(FILES))
+# Just in case putting all of the targets here
+.PHONY: src debug prof tests
+.SILENT:
 
-CC = g++
-INCLUDES = -I../include
+EXEC = afl
 
 default: src
-src: $(EXEC)
-all: $(EXEC)
+all: src
+src:
+	-@echo 'Generating executable using 03'
+	-@cd src; make src "CFLAGS=-O3"
 
-$(EXEC): Makefile $(OBJS)
-	-@echo 'Generating executable'
-	-$(CC) $(CFLAGS) $(INCLUDES) -o $(EXEC) $(OBJS)
+debug:
+	-@echo 'Generating executable using debug options'
+	-@cd src; make src "CFLAGS=-g"
 
-.cpp.o:
-	-$(CC) $(CFLAGS) $(INCLUDES) -c $<
+prof:
+	-@echo 'Calling profiling'
+	-@cd src; make src "CFLAGS=-pg"
+	-@cd exec; gprof $(EXEC) >> prof.txt; rm -f $(EXEC)
+	-@cd src; make clean
+
+tests:
+	-@echo 'Calling unit tests'
+
+run:
+	-@echo 'Running the code'
+	-@cd exec; ./$(EXEC)
 
 clean:
-	-@rm -f $(OBJS) *~
+	-@echo 'Cleaning ...'
+	-@rm -f *~
+	-@rm -f ./exec/$(EXEC)
+	-@cd src; make clean
