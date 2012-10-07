@@ -17,7 +17,7 @@ debug:
 prof:
 	-@echo 'Calling profiling'
 	-@cd src; make src "CFLAGS=-pg"
-	-@cd exec; gprof $(EXEC) >> prof.txt; rm -f $(EXEC)
+	-@cd exec; ./$(EXEC); gprof -ba $(EXEC) > prof.txt; rm -f $(EXEC) gmon.out
 	-@cd src; make clean
 
 tests:
@@ -30,5 +30,5 @@ run:
 clean:
 	-@echo 'Cleaning ...'
 	-@rm -f *~
-	-@rm -f ./exec/$(EXEC)
+	-@rm -f exec/$(EXEC) exec/prof.txt
 	-@cd src; make clean
