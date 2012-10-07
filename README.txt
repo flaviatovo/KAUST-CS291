@@ -20,7 +20,7 @@ HOW TOs:
 - clean
 	run 'make clean' on current directory
 - run code
-	run './exec/afl' or './exec/afl filename' or 'make run' on current directory
+	run './exec/afl' or './exec/afl filename' or 'make run' or 'make run "FILENAME=filename"' on current directory
 	output files have the same names as input files but finish by '.dat'
 
 WHERE:

@@ -25,7 +25,7 @@ tests:
 
 run:
 	-@echo 'Running the code'
-	-@cd exec; ./$(EXEC)
+	-@cd exec; ./$(EXEC) $(FILENAME)
 
 clean:
 	-@echo 'Cleaning ...'
