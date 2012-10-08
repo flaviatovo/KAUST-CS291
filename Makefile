@@ -22,6 +22,7 @@ prof:
 
 tests:
 	-@echo 'Calling unit tests'
+	-@cd tests; make "EXEC=$(EXEC)"
 
 run:
 	-@echo 'Running the code'
@@ -32,3 +33,4 @@ clean:
 	-@rm -f *~
 	-@rm -f exec/$(EXEC) exec/prof.txt
 	-@cd src; make clean
+	-@cd tests; make clean "EXEC=$(EXEC)"

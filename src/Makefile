@@ -9,11 +9,12 @@ INCLUDES = -I../include
 
 default: src
 src: $(EXEC)
-all: $(EXEC)
+all: src
 
 $(EXEC): Makefile $(OBJS)
 	-@echo 'Generating executable'
-	-$(CC) $(CFLAGS) $(INCLUDES) -o $(EXEC) $(OBJS)
+	-@$(CC) $(CFLAGS) $(INCLUDES) -o $(EXEC) $(OBJS)
+	-@mv $(EXEC) ../exec/$(EXEC)
 
 .cpp.o:
 	-$(CC) $(CFLAGS) $(INCLUDES) -c $<
