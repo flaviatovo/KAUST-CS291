@@ -8,15 +8,15 @@ default: src
 all: src
 src:
 	-@echo 'Generating executable using 03'
-	-@cd src; make src "CFLAGS=-O3"
+	-@cd src; make src "CFLAGS=-O3" "EXECNAME=$(EXEC)"
 
 debug:
 	-@echo 'Generating executable using debug options'
-	-@cd src; make src "CFLAGS=-g"
+	-@cd src; make src "CFLAGS=-g" "EXECNAME=$(EXEC)"
 
 prof:
 	-@echo 'Calling profiling'
-	-@cd src; make src "CFLAGS=-pg"
+	-@cd src; make src "CFLAGS=-pg" "EXECNAME=$(EXEC)"
 	-@cd exec; ./$(EXEC); gprof -ba $(EXEC) > prof.txt; rm -f $(EXEC) gmon.out
 	-@cd src; make clean
 
